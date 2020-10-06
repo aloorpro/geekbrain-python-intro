@@ -1,0 +1,19 @@
+# Пользователь вводит время в секундах. Переведите время в часы, минуты и секунды и выведите в формате чч:мм:сс.
+# Используйте форматирование строк.
+
+while True:
+    try:
+        total_secs = int(input("Enter time in secs: "))
+        break
+    except ValueError:
+        print("Wrong input. Try again.")
+        continue
+
+total_minutes = total_secs // 60
+seconds = total_secs % 60
+minutes = total_minutes % 60
+hours = total_minutes // 60 % 24
+if hours < 10:
+    hours = '0' + str(hours)
+
+print("{}:{}:{}".format(hours, minutes, seconds))
