@@ -15,13 +15,8 @@ class TimeFormat:
         self.minutes = secs // 60 % 60
         self.hours = secs // 3600 % 24
 
-    def __xx__(self, val):
-        if val < 10:
-            val = '0' + str(val)
-        return val
-
     def __str__(self):
-        return f"{self.__xx__(self.hours)}:{self.__xx__(self.minutes)}:{self.__xx__(self.seconds)}"
+        return f"{self.hours:02}:{self.minutes:02}:{self.seconds:02}"
 
 our_time = TimeFormat(total_secs)
 
