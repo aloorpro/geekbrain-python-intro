@@ -13,7 +13,9 @@ total_minutes = total_secs // 60
 seconds = total_secs % 60
 minutes = total_minutes % 60
 hours = total_minutes // 60 % 24
-if hours < 10:
-    hours = '0' + str(hours)
+def xx(val):
+    if val < 10:
+        val = '0' + str(val)
+    return val
 
-print("{}:{}:{}".format(hours, minutes, seconds))
+print("{}:{}:{}".format(xx(hours), xx(minutes), xx(seconds)))

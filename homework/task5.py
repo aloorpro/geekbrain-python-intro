@@ -7,7 +7,7 @@
 
 while True:
     try:
-        proceeds = int(input("Profit: "))
+        proceeds = int(input("Proceeds: "))
         costs = int(input("Costs: "))
         break
     except ValueError:
@@ -28,4 +28,4 @@ while True:
     except ValueError:
         print("Error. Again")
 
-print(f"Mean profit is {profit / staff:.2f}")
+print(f"Mean profit is {profit / staff:.1f}")
