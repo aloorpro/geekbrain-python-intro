@@ -9,13 +9,20 @@ while True:
         print("Wrong input. Try again.")
         continue
 
-total_minutes = total_secs // 60
-seconds = total_secs % 60
-minutes = total_minutes % 60
-hours = total_minutes // 60 % 24
-def xx(val):
-    if val < 10:
-        val = '0' + str(val)
-    return val
+class TimeFormat:
+    def __init__(self, secs):
+        self.seconds = secs % 60
+        self.minutes = secs // 60 % 60
+        self.hours = secs // 3600 % 24
 
-print("{}:{}:{}".format(xx(hours), xx(minutes), xx(seconds)))
+    def __xx__(self, val):
+        if val < 10:
+            val = '0' + str(val)
+        return val
+
+    def __str__(self):
+        return f"{self.__xx__(self.hours)}:{self.__xx__(self.minutes)}:{self.__xx__(self.seconds)}"
+
+our_time = TimeFormat(total_secs)
+
+print(f"{our_time}")
