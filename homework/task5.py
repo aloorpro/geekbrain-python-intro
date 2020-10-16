@@ -17,9 +17,7 @@ def map_until(func, iterable):
 
 my_sum = 0
 interrupt = False
-while True:
+while not interrupt:
     nums = list(map_until(float, input("Enter nums or not nums for interrupt: ").split()))
     my_sum += sum(nums)
     print(f"Sum is {my_sum}")
-    if interrupt:
-        break
