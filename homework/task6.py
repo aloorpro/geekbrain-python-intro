@@ -4,7 +4,6 @@
 # вывод исходной строки, но каждое слово должно начинаться с заглавной буквы. Необходимо использовать написанную
 # ранее функцию int_func().
 
-int_func = lambda word: word[:1].upper() + word[1:] if word and islatin(word) else ''
-islatin = lambda word: ascii(word)[1:-1].isalpha()
-phrase = ' '.join(list(map(int_func, input("Enter phrase: ").split(' '))))
+int_func = lambda word: word.capitalize() if ascii(word)[1:-1].isalpha() else None
+phrase = ' '.join(list(map(int_func, input("Enter phrase: ").split())))
 print(phrase)
