@@ -3,11 +3,6 @@
 # Пример исходного списка: [300, 2, 12, 44, 1, 1, 4, 10, 7, 1, 78, 123, 55].
 # Результат: [12, 44, 4, 10, 78, 123].
 
-def every_bigger(numlist):
-    for i, num in enumerate(numlist[1:]):
-        if num > numlist[i]:
-            yield num
-
-
+every_bigger = lambda numlist: [num for i, num in enumerate(numlist[1:]) if num > numlist[i]]
 example = [300, 2, 12, 44, 1, 1, 4, 10, 7, 1, 78, 123, 55]
-print(list(every_bigger(example)))
+print(every_bigger(example))
