@@ -7,8 +7,8 @@ def fac(n):
     num = 1
     for i in range(1, n+1):
         num *= i
-        yield num
+        yield (i, num)
 
 
-for number in fac(10):
-    print(number)
+for k, number in fac(15):
+    print(f'{k}! = {number}')
