@@ -18,9 +18,7 @@ def firms(filename):
     for firm in open(filename, 'r', encoding='utf-8'):
         name, form, income, costs = firm.split()
         profits[name] = int(income) - int(costs)
-    return  [profits,
-            {'average_profit': round(sum(profits.values()) / len(profits), 2)}
-            ]
+    return [profits, {'average_profit': round(sum(profits.values()) / len(profits), 2)}]
 
 
 if __name__ == '__main__':
