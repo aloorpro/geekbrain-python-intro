@@ -13,8 +13,7 @@ def lessons(filename):
     result = dict()
     for line in open(filename, 'r'):
         name, hours = line.split(':')
-        hours = sum(map(int, ''.join(filter(lambda s: s.isdigit() or s.isspace(), hours)).split()))
-        result[name] = hours
+        result[name] = sum(map(int, ''.join(filter(lambda s: s.isdigit() or s.isspace(), hours)).split()))
     return result
 
 
