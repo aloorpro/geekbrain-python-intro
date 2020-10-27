@@ -26,6 +26,6 @@ if __name__ == '__main__':
     try:
         dstfile = argv[1]
         with open(dstfile, 'w', encoding='utf-8') as dst:
-            dst.write(dumps(firms('example7')))
+            dst.write(dumps(firms('example7'), indent=4, ensure_ascii=False))
     except IndexError:
         print("Need filename")
