@@ -23,8 +23,8 @@ class TrafficLight():
         when_stop = 0
         self.__running = True
         for light, secs in cycle(TrafficLight.__lights):
-            self.color = light
-            print(self.color)
+            self.__color = light
+            print(self.__color)
             when_stop += secs
             sleep(secs)
             if when_stop >= total_work:
