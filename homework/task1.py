@@ -21,10 +21,9 @@ class Matrix:
         return result
 
     def __add__(self, other):
-        add_line = lambda x, y: list(map(sum, zip(x, y)))
         result = []
         for i in range(min(map(len, (self.matrix, other.matrix)))):
-            result.append(add_line(self.matrix[i], other.matrix[i]))
+            result.append(list(map(sum, zip(self.matrix[i], other.matrix[i]))))
         return Matrix(result)
 
 
