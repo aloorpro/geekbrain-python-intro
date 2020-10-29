@@ -35,13 +35,13 @@ class Suit:
         return self.__height
 
     @height.setter
-    def height(self, size):
-        if size < 1.40:
+    def height(self, height):
+        if height < 1.40:
             self.__height = 1.40
-        elif size > 2.04:
+        elif height > 2.04:
             self.__height = 2.04
         else:
-            self.__height = size
+            self.__height = height
 
     def cloth(self):
         return round(self.height * 2 + 0.3, 3)
