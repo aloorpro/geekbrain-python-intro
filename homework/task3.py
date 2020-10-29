@@ -27,10 +27,7 @@ class Cell:
         return Cell(self.quantity + other.quantity)
 
     def __sub__(self, other):
-        if self.quantity >= other.quantity:
-            return Cell(self.quantity - other.quantity)
-        else:
-            raise Exception("Result is less than zero")
+        return Cell(abs(self.quantity - other.quantity))
 
     def __mul__(self, other):
         return Cell(self.quantity * other.quantity)
@@ -46,6 +43,6 @@ cell_a = Cell(13)
 cell_b = Cell(7)
 print((cell_a + cell_b).make_order(5))
 print('---------------------------')
-print((cell_a - cell_b).make_order(5))
+print((cell_b - cell_a).make_order(5))
 print('---------------------------')
 print((cell_a / cell_b).make_order(5))
